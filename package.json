@@ -1,6 +1,6 @@
 {
-  "name": "debian-vscode",
-  "displayName": "Debian",
+  "name": "debian-control-vscode",
+  "displayName": "Debian Control Files",
   "description": "Debian packaging files syntax highlighting support for VSCode",
   "version": "0.2.0",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "publisher": "jdemille",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dawidd6/debian-vscode.git"
+    "url": "https://github.com/judemille/debian-vscode.git"
   },
   "engines": {
     "vscode": "^1.75.0"
