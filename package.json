@@ -1,100 +1,99 @@
 {
-    "name": "debian-vscode",
-    "displayName": "Debian",
-    "description": "Debian packaging files syntax highlighting support for VSCode",
-    "version": "0.1.2",
-    "license": "MIT",
-    "icon": "images/debian.png",
-    "publisher": "dawidd6",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dawidd6/debian-vscode.git"
-    },
-    "engines": {
-        "vscode": "^1.41.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "debian-control",
-                "aliases": [
-                    "Debian Control"
-                ],
-                "filenames": [
-                    "control"
-                ],
-                "configuration": "./languages/debian-control.language-configuration.json"
-            },
-            {
-                "id": "debian-copyright",
-                "aliases": [
-                    "Debian Copyright"
-                ],
-                "filenames": [
-                    "copyright"
-                ],
-                "configuration": "./languages/debian-copyright.language-configuration.json"
-            },
-            {
-                "id": "debian-changelog",
-                "aliases": [
-                    "Debian Changelog"
-                ],
-                "filenames": [
-                    "changelog"
-                ],
-                "configuration": "./languages/debian-changelog.language-configuration.json"
-            },
-            {
-                "id": "debian-upstream-metadata",
-                "aliases": [
-                    "Debian Upstream Metadata"
-                ],
-                "filenames": [
-                    "metadata"
-                ],
-                "configuration": "./languages/debian-upstream-metadata.language-configuration.json"
-            }
+  "name": "debian-vscode",
+  "displayName": "Debian",
+  "description": "Debian packaging files syntax highlighting support for VSCode",
+  "version": "0.2.0",
+  "license": "MIT",
+  "icon": "images/debian.png",
+  "publisher": "jdemille",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dawidd6/debian-vscode.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "debian-control",
+        "aliases": [
+          "Debian Control"
         ],
-        "grammars": [
-            {
-                "language": "debian-control",
-                "scopeName": "debian-control",
-                "path": "./syntaxes/debian-control.tmGrammar.json"
-            },
-            {
-                "language": "debian-copyright",
-                "scopeName": "debian-copyright",
-                "path": "./syntaxes/debian-copyright.tmGrammar.json"
-            },
-            {
-                "language": "debian-changelog",
-                "scopeName": "debian-changelog",
-                "path": "./syntaxes/debian-changelog.tmGrammar.json"
-            },
-            {
-                "language": "debian-upstream-metadata",
-                "scopeName": "debian-upstream-metadata",
-                "path": "./syntaxes/debian-upstream-metadata.tmGrammar.json"
-            }
-        ]
-    },
-    "activationEvents": [
-        "onLanguage:debian-control"
+        "filenamePatterns": [
+          "**/debian/control"
+        ],
+        "configuration": "./languages/debian-control.language-configuration.json"
+      },
+      {
+        "id": "debian-copyright",
+        "aliases": [
+          "Debian Copyright"
+        ],
+        "filenamePatterns": [
+          "**/debian/copyright",
+          "**/.reuse/dep5"
+        ],
+        "configuration": "./languages/debian-copyright.language-configuration.json"
+      },
+      {
+        "id": "debian-changelog",
+        "aliases": [
+          "Debian Changelog"
+        ],
+        "filenamePatterns": [
+          "**/debian/changelog"
+        ],
+        "configuration": "./languages/debian-changelog.language-configuration.json"
+      },
+      {
+        "id": "debian-upstream-metadata",
+        "aliases": [
+          "Debian Upstream Metadata"
+        ],
+        "filenamePatterns": [
+          "**/debian/metadata"
+        ],
+        "configuration": "./languages/debian-upstream-metadata.language-configuration.json"
+      }
     ],
-    "main": "./out/extension.js",
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./"
-    },
-    "devDependencies": {
-        "@types/node": "^8.10.25",
-        "@types/vscode": "^1.51.0",
-        "tslint": "^5.16.0",
-        "typescript": "^3.4.5"
-    }
+    "grammars": [
+      {
+        "language": "debian-control",
+        "scopeName": "debian-control",
+        "path": "./syntaxes/debian-control.tmGrammar.json"
+      },
+      {
+        "language": "debian-copyright",
+        "scopeName": "debian-copyright",
+        "path": "./syntaxes/debian-copyright.tmGrammar.json"
+      },
+      {
+        "language": "debian-changelog",
+        "scopeName": "debian-changelog",
+        "path": "./syntaxes/debian-changelog.tmGrammar.json"
+      },
+      {
+        "language": "debian-upstream-metadata",
+        "scopeName": "debian-upstream-metadata",
+        "path": "./syntaxes/debian-upstream-metadata.tmGrammar.json"
+      }
+    ]
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "bun run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.8",
+    "@types/vscode": "^1.75.0",
+    "@vscode/vsce": "^2.22.0",
+    "tslint": "^6.1.3",
+    "typescript": "^5.3.3"
+  }
 }
